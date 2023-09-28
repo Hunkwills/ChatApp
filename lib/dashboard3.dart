@@ -409,7 +409,7 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
                           radius: 25, // Adjust the radius to control the size of the circle
                           backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
                         ),
-                        title: Text('Shebah Karungi', style: TextStyle(fontSize: 15),),
+                        title: Text('Shebah Karungi', style: TextStyle(fontSize: 15,color: Colors.purpleAccent),),
                         subtitle: Text('What was your best ....', style: TextStyle(fontSize: 10),),
                         trailing: Text('08:41', style: TextStyle(fontSize: 10,color: Colors.purpleAccent),),
                       ),
