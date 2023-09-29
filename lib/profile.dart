@@ -27,46 +27,175 @@ class _ProfileBodyWidgetState extends State<ProfileWidget> {
     return Scaffold(body: SafeArea(
       child: Container(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            GestureDetector(
+              onTap: (){
+                Navigator.pop(context);
+              },
+              child: ListTile(
+                leading: Icon(Icons.arrow_back_ios,)
+              ),
+            ),
             ListTile(
-              leading: GestureDetector(
-                onTap: () {
-                  // Navigator.pushNamed(context, '/main');},
+              title: Center(
+                child: Text(
+                  'Bruno Kabuga'
+                ),
+              ),
+            ),
+            ListTile(
 
-                  Navigator.pop(context);},
+              title: Center(
                 child: Container(
-                  height: 30,
-                  width: 30,
-                  // color: Colors.deepPurple,
-                  margin: EdgeInsets.only(bottom: 40, left: 10),
-                  child: Icon(
-                    CupertinoIcons.arrow_left
+                  padding: EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 2.0,
+                    ),
+                  ),
+                  child: CircleAvatar(
+                    radius: 50, // Adjust the radius to control the size of the circle
+                    backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
                   ),
                 ),
               ),
-              title: Container(
-                padding: EdgeInsets.all(2),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 2.0,
-                  ),
-                ),
-                child: CircleAvatar(
-                  radius: 50, // Adjust the radius to control the size of the circle
-                  backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                ),
-              ),
 
-              trailing: Container(
-                padding: EdgeInsets.only(bottom: 40),
-                child: Icon(
-                  CupertinoIcons.ellipsis_vertical
-                ),
-              ),
+
 
               ),
+            ListTile(
+              title: Icon(
+                CupertinoIcons.search
+              ),
+              subtitle: Center(
+                child: Text(
+                  'Search'
+                ),
+              ),
+            ),
+        Expanded(child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Card(
+                child: Row(
+                  children: [
+                    Container(
+                        padding: EdgeInsets.only(left: 10, bottom: 20, top: 20),
+                        child: Text('Motivated to Serve...\nPhilanthropy.',)),
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  Text('Media, links and docs')
+                ],
+              ),
+              Row(
+                children: [
+                  Expanded(
+                      flex: 1,
+                      child: Container(
+                        padding: EdgeInsets.all(2),
+
+                        child: Image.asset(
+                          'assets/brunolatest.JPG',
+                          fit: BoxFit.cover,// Provide the image URL or AssetImage
+                        ),
+                        height: 100,
+                        color: Colors.purple,
+                      )),
+                  Expanded(
+                      flex: 1,
+                      child: Container(
+                        padding: EdgeInsets.all(2),
+
+                        child: Image.asset(
+                          'assets/brunolatest.JPG',
+                          fit: BoxFit.cover,// Provide the image URL or AssetImage
+                        ),
+
+                        height: 100,
+                        color: Colors.purpleAccent,
+                      )),
+                  Expanded(
+                      flex: 1,
+                      child: Container(
+                          padding: EdgeInsets.all(2),
+
+                          child: Image.asset(
+                            'assets/brunolatest.JPG',
+                            fit: BoxFit.cover,// Provide the image URL or AssetImage
+                          ),
+
+                          height: 100,
+                          color: Colors.pink
+                      ))
+                ],
+              ),
+              Card(
+                child: Row(
+                  children: [
+                    // Expanded(child: SizedBox(
+                    //   width: 2,
+                    // )),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+
+                          child: Icon(
+                            Icons.notifications,
+                            size: 30,
+                          )
+                      ),
+                    ),
+                    Expanded(
+                      flex: 4,
+                      child: ListTile(
+                        title: Text('Mute\nNotifications',
+                          style: TextStyle(
+                            fontWeight: FontWeight.normal,
+                          ),),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+              Card(
+                child: Row(
+                  children: [
+                    // Expanded(child: SizedBox(
+                    //   width: 2,
+                    // )),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+
+                          child: Icon(
+                            Icons.photo,
+                            size: 30,
+                          )
+                      ),
+                    ),
+                    Expanded(
+                      flex: 4,
+                      child: ListTile(
+                        title: Text('Media\nVisibility',
+                          style: TextStyle(
+                            fontWeight: FontWeight.normal,
+                          ),),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ))
 
               ]
         ),

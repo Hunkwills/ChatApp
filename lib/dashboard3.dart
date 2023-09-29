@@ -15,7 +15,10 @@ class Dashboard extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: Text('TWITCH'),
+          title: Text('twitch',
+          style: TextStyle(
+            fontFamily: 'Merriweather'
+          ),),
           actions: [
             Icon(CupertinoIcons.ellipsis_vertical)
           ],

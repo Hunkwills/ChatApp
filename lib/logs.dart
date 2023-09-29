@@ -44,7 +44,10 @@ class _LogsWidgetState extends State<LogsWidget> {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),),
-                  subtitle: Text('Share a link for\n your Twitch call'),
+                  subtitle: Text('Share a link for\n your Twitch call',
+                  style: TextStyle(
+                    color: Colors.white60,
+                  ),),
                 ),
               )
             ],
@@ -81,7 +84,10 @@ class _LogsWidgetState extends State<LogsWidget> {
                         ),
                         Expanded(
                             flex: 4,
-                            child: Text('September 24, 19:20'))
+                            child: Text('September 24, 19:20',
+                            style: TextStyle(
+                              color: Colors.white60
+                            ),))
                       ],
                     ),
 
@@ -113,7 +119,10 @@ class _LogsWidgetState extends State<LogsWidget> {
                         ),
                         Expanded(
                             flex: 4,
-                            child: Text('September 24, 19:20'))
+                            child: Text('September 24, 19:20',
+                              style: TextStyle(
+                                  color: Colors.white60
+                              ),))
                       ],
                     ),
 
@@ -132,7 +141,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                     ),
                     title: Container(
                         padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Nano', style: TextStyle(fontSize: 15),)),
+                        child: Text('Alvin Mulumba', style: TextStyle(fontSize: 15),)),
                     subtitle: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -140,12 +149,15 @@ class _LogsWidgetState extends State<LogsWidget> {
                           flex: 1,
                           child: Icon(
                             CupertinoIcons.arrow_down_left,
-                            color: Colors.red,
+                            color: Colors.green,
                           ),
                         ),
                         Expanded(
                             flex: 4,
-                            child: Text('September 24, 19:20'))
+                            child: Text('September 24, 19:20',
+                              style: TextStyle(
+                                  color: Colors.white60
+                              ),))
                       ],
                     ),
 
@@ -164,7 +176,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                     ),
                     title: Container(
                         padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Nano', style: TextStyle(fontSize: 15),)),
+                        child: Text('Alvin Mulumba', style: TextStyle(fontSize: 15),)),
                     subtitle: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -172,12 +184,15 @@ class _LogsWidgetState extends State<LogsWidget> {
                           flex: 1,
                           child: Icon(
                             CupertinoIcons.arrow_down_left,
-                            color: Colors.red,
+                            color: Colors.green,
                           ),
                         ),
                         Expanded(
                             flex: 4,
-                            child: Text('September 24, 19:20'))
+                            child: Text('September 24, 19:20',
+                              style: TextStyle(
+                                  color: Colors.white60
+                              ),))
                       ],
                     ),
 
@@ -196,7 +211,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                     ),
                     title: Container(
                         padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Nano', style: TextStyle(fontSize: 15),)),
+                        child: Text('Alvin Mulumba', style: TextStyle(fontSize: 15),)),
                     subtitle: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -204,12 +219,15 @@ class _LogsWidgetState extends State<LogsWidget> {
                           flex: 1,
                           child: Icon(
                             CupertinoIcons.arrow_down_left,
-                            color: Colors.red,
+                            color: Colors.green,
                           ),
                         ),
                         Expanded(
                             flex: 4,
-                            child: Text('September 24, 19:20'))
+                            child: Text('September 24, 19:20',
+                              style: TextStyle(
+                                  color: Colors.white60
+                              ),))
                       ],
                     ),
 
@@ -228,7 +246,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                     ),
                     title: Container(
                         padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Nano', style: TextStyle(fontSize: 15),)),
+                        child: Text('Alvin Mulumba', style: TextStyle(fontSize: 15),)),
                     subtitle: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -236,12 +254,15 @@ class _LogsWidgetState extends State<LogsWidget> {
                           flex: 1,
                           child: Icon(
                             CupertinoIcons.arrow_down_left,
-                            color: Colors.red,
+                            color: Colors.green,
                           ),
                         ),
                         Expanded(
                             flex: 4,
-                            child: Text('September 24, 19:20'))
+                            child: Text('September 24, 19:20',
+                              style: TextStyle(
+                                  color: Colors.white60
+                              ),))
                       ],
                     ),
 
@@ -260,7 +281,7 @@ class _LogsWidgetState extends State<LogsWidget> {
                     ),
                     title: Container(
                         padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Nano', style: TextStyle(fontSize: 15),)),
+                        child: Text('Alvin Mulumba', style: TextStyle(fontSize: 15),)),
                     subtitle: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -268,12 +289,15 @@ class _LogsWidgetState extends State<LogsWidget> {
                           flex: 1,
                           child: Icon(
                             CupertinoIcons.arrow_down_left,
-                            color: Colors.red,
+                            color: Colors.green,
                           ),
                         ),
                         Expanded(
                             flex: 4,
-                            child: Text('September 24, 19:20'))
+                            child: Text('September 24, 19:20',
+                              style: TextStyle(
+                                  color: Colors.white60
+                              ),))
                       ],
                     ),
 
@@ -283,71 +307,8 @@ class _LogsWidgetState extends State<LogsWidget> {
                     ),
 
                   ),
-                ),
-                Card(
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 25, // Adjust the radius to control the size of the circle
-                      backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                    ),
-                    title: Container(
-                        padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Nano', style: TextStyle(fontSize: 15),)),
-                    subtitle: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Icon(
-                            CupertinoIcons.arrow_down_left,
-                            color: Colors.red,
-                          ),
-                        ),
-                        Expanded(
-                            flex: 4,
-                            child: Text('September 24, 19:20'))
-                      ],
-                    ),
+                )
 
-                    trailing: Icon(
-                      Icons.call,
-                      color: Colors.green,
-                    ),
-
-                  ),
-                ),
-                Card(
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 25, // Adjust the radius to control the size of the circle
-                      backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                    ),
-                    title: Container(
-                        padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Nano', style: TextStyle(fontSize: 15),)),
-                    subtitle: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Icon(
-                            CupertinoIcons.arrow_down_left,
-                            color: Colors.red,
-                          ),
-                        ),
-                        Expanded(
-                            flex: 4,
-                            child: Text('September 24, 19:20'))
-                      ],
-                    ),
-
-                    trailing: Icon(
-                      Icons.call,
-                      color: Colors.green,
-                    ),
-
-                  ),
-                ),
               ],
             ),
           ))

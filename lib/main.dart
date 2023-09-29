@@ -42,7 +42,8 @@ class MyApp extends StatelessWidget {
         '/form': (context) => FormWidget(),
         '/profile': (context) => ProfileWidget(),
         '/main': (context) => Dashboard(),// Define the route to SecondPage
-      }
+      },
+      debugShowCheckedModeBanner: false,
     );
   }
 }

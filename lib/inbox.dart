@@ -30,6 +30,7 @@ class _MyInboxWidgetState extends State<MyInboxWidget> {
             leading: GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, '/profile');},
+
               child: CircleAvatar(
                 radius: 25, // Adjust the radius to control the size of the circle
                 backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
