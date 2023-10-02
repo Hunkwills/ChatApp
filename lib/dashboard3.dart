@@ -41,6 +41,7 @@ class Dashboard extends StatelessWidget {
   }
 }
 
+
 class MyBodyWidget extends StatefulWidget {
   const MyBodyWidget({super.key});
 
@@ -49,6 +50,34 @@ class MyBodyWidget extends StatefulWidget {
 }
 
 class _MyBodyWidgetState extends State<MyBodyWidget> {
+
+  // List<String> data = []; // returns a list of strings
+  // List<int> data = []; // returns a list of integers
+  // List<double> data = []; // returns a list of floats
+  // List<Widget> data = []; // returns a list of Intergers
+  // List<dynamic> data = []; // returns a list of various data types
+  // List<CustomModel> data = []; // returns a list of custom models
+
+  List<ChatData> dataList = [
+    ChatData("Mourice", "Good morning bro", "08:32", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"),
+    ChatData("Francis", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528"),
+    ChatData("Francis", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528"),
+    ChatData("Francis", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528"),
+    ChatData("Francis", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528"),
+    ChatData("Francis", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528")
+  ];
+
+  List<StatusData> statusList = [
+    StatusData('Dolotia',"https://images.unsplash.com/photo-1576363346069-e57aab1813bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWZyaWNhbiUyMGxhZHl8ZW58MHx8MHx8fDA%3D&w=1000&q=80"),
+    StatusData('Amina', "https://images.unsplash.com/photo-1576363346069-e57aab1813bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWZyaWNhbiUyMGxhZHl8ZW58MHx8MHx8fDA%3D&w=1000&q=80"),
+    StatusData('Mary', "https://images.unsplash.com/photo-1576363346069-e57aab1813bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWZyaWNhbiUyMGxhZHl8ZW58MHx8MHx8fDA%3D&w=1000&q=80"),
+    StatusData('Akello', "https://images.unsplash.com/photo-1576363346069-e57aab1813bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWZyaWNhbiUyMGxhZHl8ZW58MHx8MHx8fDA%3D&w=1000&q=80"),
+    StatusData('Bri', "https://images.unsplash.com/photo-1576363346069-e57aab1813bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWZyaWNhbiUyMGxhZHl8ZW58MHx8MHx8fDA%3D&w=1000&q=80"),
+    StatusData('Hope', "https://images.unsplash.com/photo-1576363346069-e57aab1813bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWZyaWNhbiUyMGxhZHl8ZW58MHx8MHx8fDA%3D&w=1000&q=80"),
+    StatusData('Gai', "https://images.unsplash.com/photo-1576363346069-e57aab1813bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWZyaWNhbiUyMGxhZHl8ZW58MHx8MHx8fDA%3D&w=1000&q=80"),
+
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,182 +103,50 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
           ),
           Text(
               'Recent Updates'),
-          Padding(
-            padding: EdgeInsets.fromLTRB(2, 10, 2, 5),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
+          Expanded(
+            flex: 3,
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(2, 10, 2, 5),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: statusList.length,
+                itemBuilder: (BuildContext context, int i){
+                  StatusData object = statusList[i];
+                  return Container(
+                    margin: EdgeInsets.symmetric(vertical: 5, horizontal: 3),
+                    child: Column(
 
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 2.0,
+                      children: [
+                        // Spacer(),
+
+                        Container(
+                          padding: EdgeInsets.all(2),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Colors.white,
+                              width: 2.0,
+                            ),
+                          ),
+                          child: CircleAvatar(
+                            radius: 25, // Adjust the radius to control the size of the circle
+                            backgroundImage: NetworkImage(object.ImageUrl,), // Provide the image URL or AssetImage
                           ),
                         ),
-                        child: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                      ),
-                      Text('Bruno')],
-                  ),
-                  SizedBox(width: 5,),
-                  Column(
-                    children: [
+                        Text(object.Name),
+                      ],
 
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 2.0,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                      ),
-                      Text('Mark')],
-                  ),
-                  SizedBox(width: 5,),
-                  Column(
-                    children: [
+                    ),
+                  );
 
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 2.0,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                      ),
-                      Text('Suubi')],
-                  ),
-                  SizedBox(width: 5,),
-                  Column(
-                    children: [
-
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 2.0,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                      ),
-                      Text('Edison')],
-                  ),
-                  SizedBox(width: 5,),
-                  Column(
-                    children: [
-
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 2.0,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                      ),
-                      Text('Daudi')],
-                  ),
-                  SizedBox(width: 5,),
-                  Column(
-                    children: [
-
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 2.0,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                      ),
-                      Text('Ivan')],
-                  ),
-                  SizedBox(width: 5,),
-                  Column(
-                    children: [
-
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 2.0,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                      ),
-                      Text('Morris')],
-                  ),
-                  SizedBox(width: 5,),
-                  Column(
-                    children: [
-
-                      Container(
-                        padding: EdgeInsets.all(2),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 2.0,
-                          ),
-                        ),
-                        child: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                      ),
-                      Text('Jimmy')],
-                  ),
-
-                ],
-              ),
+              }) ,
             ),
           ),
           Row(
             children: [
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(15, 5, 15, 10),
+                  padding: EdgeInsets.fromLTRB(15, 1, 15, 1),
                   child: Divider(
                     color: Colors.white60,
                     thickness: 2.0,
@@ -259,169 +156,34 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
             ],
           ),
           Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/inbox');},
-                    child: const Card(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
+            flex: 7,
+            child: Container(
+              child: ListView.builder(
+                itemCount: dataList.length,
+                  itemBuilder: (BuildContext context, int i){
+                    ChatData item = dataList[i];
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, '/inbox');},
+                        child:  Card(
+                        elevation: 1,
+                        shadowColor: Colors.white,
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            radius: 25, // Adjust the radius to control the size of the circle
+                            backgroundImage: NetworkImage(item.imageUrl), // Provide the image URL or AssetImage
+                          ),
+                          title: Text(
+                            item.Name,
+                            style: TextStyle(fontSize: 15, color: Colors.purpleAccent),
+                          ),
+                          subtitle: Text(item.Message, style: TextStyle(fontSize: 10),),
+                          trailing: Text(item.time, style: TextStyle(fontSize: 10),),
                         ),
-                        title: Text(
-                          'Dele Ali',
-                          style: TextStyle(fontSize: 15, color: Colors.purpleAccent),
-                        ),
-                        subtitle: Text('What was your best ....', style: TextStyle(fontSize: 10),),
-                        trailing: Text('16:49', style: TextStyle(fontSize: 10),),
                       ),
-                      elevation: 1,
-                      shadowColor: Colors.white,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/inbox');},
-                    child: Card(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                        title: Text('Ngolo Kante', style: TextStyle(fontSize: 15, color: Colors.purpleAccent),),
-                        subtitle: Text('What was your best ....', style: TextStyle(fontSize: 10),),
-                        trailing: Text('15:41', style: TextStyle(fontSize: 10),),
-                      ),
-                      elevation: 1,
-                      shadowColor: Colors.white,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/inbox');},
-                    child: Card(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                        title: Text('Didier Drogba', style: TextStyle(fontSize: 15, color: Colors.purpleAccent),),
-                        subtitle: Text('What was your best ....', style: TextStyle(fontSize: 10),),
-                        trailing: Text('14:23', style: TextStyle(fontSize: 10),),
-                      ),
-                      elevation: 1,
-                      shadowColor: Colors.white,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/inbox');},
-                    child: Card(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                        title: Text('Jon Stones', style: TextStyle(fontSize: 15, color: Colors.purpleAccent),),
-                        subtitle: Text('What was your best ....', style: TextStyle(fontSize: 10),),
-                        trailing: Text('13:59', style: TextStyle(fontSize: 10),),
-                      ),
-                      elevation: 1,
-                      shadowColor: Colors.white,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/inbox');},
-                    child: Card(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                        title: Text('Jodan Sancho', style: TextStyle(fontSize: 15, color: Colors.purpleAccent),),
-                        subtitle: Text('What was your best ....', style: TextStyle(fontSize: 10),),
-                        trailing: Text('12:30', style: TextStyle(fontSize: 10),),
-                      ),
-                      elevation: 1,
-                      shadowColor: Colors.white,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/inbox');},
-                    child: Card(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                        title: Text('Pep Guardiola', style: TextStyle(fontSize: 15, color: Colors.purpleAccent),),
-                        subtitle: Text('What was your best ....', style: TextStyle(fontSize: 10),),
-                        trailing: Text('11:44', style: TextStyle(fontSize: 10),),
-                      ),
-                      elevation: 1,
-                      shadowColor: Colors.white,
-                    ),
-                  ),
+                    );
 
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/inbox');},
-                    child: Card(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                        title: Text('Coach Michel', style: TextStyle(fontSize: 15, color: Colors.purpleAccent),),
-                        subtitle: Text('What was your best ....', style: TextStyle(fontSize: 10),),
-                        trailing: Text('10:21', style: TextStyle(fontSize: 10),),
-                      ),
-                      elevation: 1,
-                      shadowColor: Colors.white,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/inbox');},
-                    child: Card(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                        title: Text('Cindy Sanyu', style: TextStyle(fontSize: 15, color: Colors.purpleAccent),),
-                        subtitle: Text('What was your best ....', style: TextStyle(fontSize: 10),),
-                        trailing: Text('09:42', style: TextStyle(fontSize: 10),),
-                      ),
-                      elevation: 1,
-                      shadowColor: Colors.white,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/inbox');},
-                    child: Card(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          radius: 25, // Adjust the radius to control the size of the circle
-                          backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                        ),
-                        title: Text('Shebah Karungi', style: TextStyle(fontSize: 15,color: Colors.purpleAccent),),
-                        subtitle: Text('What was your best ....', style: TextStyle(fontSize: 10),),
-                        trailing: Text('08:41', style: TextStyle(fontSize: 10,color: Colors.purpleAccent),),
-                      ),
-                      elevation: 1,
-                      shadowColor: Colors.white,
-                    ),
-                  ),
-
-                ],
+                  }
               ),
             ),
           ),
@@ -440,4 +202,23 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
 
 
   }
+}
+
+
+
+class ChatData{
+  String Name;
+  String Message;
+  String time;
+  String imageUrl;
+
+  ChatData(this.Name, this.Message, this.time, this.imageUrl);
+
+}
+
+class StatusData{
+  String Name;
+  String ImageUrl;
+
+  StatusData(this.Name,this.ImageUrl);
 }

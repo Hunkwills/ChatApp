@@ -8,312 +8,114 @@ class LogsWidget extends StatefulWidget {
 }
 
 class _LogsWidgetState extends State<LogsWidget> {
+
+  List<CallData> CallDataList = [
+    CallData('Alvin Mulumba', 'September 24', '19:20', Colors.green, 'assets/Bruno_passport.png'),
+    CallData('Alvin Mulumba', 'September 24', '19:20', Colors.red, 'assets/Bruno_passport.png'),
+    CallData('Alvin Mulumba', 'September 24', '19:20', Colors.green, 'assets/Bruno_passport.png'),
+    CallData('Alvin Mulumba', 'September 24', '19:20', Colors.red, 'assets/Bruno_passport.png'),
+    CallData('Alvin Mulumba', 'September 24', '19:20', Colors.green, 'assets/Bruno_passport.png'),
+    CallData('Alvin Mulumba', 'September 24', '19:20', Colors.green, 'assets/Bruno_passport.png'),
+
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Expanded(child: SizedBox(
-                width: 2,
-              )),
-              Expanded(
-                flex: 1,
-                child: Container(
+          ListTile(
+            leading: Container(
 
-                  padding: EdgeInsets.all(0),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: Colors.purple,
-                      width: 2.0,
-                    ),
-                  ),
-                  child: Icon(
-                    CupertinoIcons.link_circle,
-                    size: 60,
-                  )
-                ),
-              ),
-              Expanded(
-                flex: 4,
-                child: ListTile(
-                  title: Text('Create call link',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),),
-                  subtitle: Text('Share a link for\n your Twitch call',
-                  style: TextStyle(
-                    color: Colors.white60,
-                  ),),
-                ),
-              )
-            ],
+      padding: EdgeInsets.all(0),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          // border: Border.all(
+          //   color: Colors.purple,
+          //   width: 2.0,
+          // ),
+        ),
+        child: Icon(
+          CupertinoIcons.link_circle,
+          size: 60,
+
+        )
+    ),
+            title: Text("Create Call Link"),
+            subtitle: Text("Share a link for your Twitch call",
+              style: TextStyle(
+                color: Colors.white60,
+              ),),
           ),
-          Expanded(child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(left: 0, top: 10),
-                  child: Text('Recent',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-
-                    ),),
-                ),
-                Card(
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 25, // Adjust the radius to control the size of the circle
-                      backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                    ),
-                    title: Container(
-                        padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Alvin Mulumba', style: TextStyle(fontSize: 15),)),
-                    subtitle: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Icon(
-                            CupertinoIcons.arrow_down_left,
-                            color: Colors.green,
-                          ),
-                        ),
-                        Expanded(
-                            flex: 4,
-                            child: Text('September 24, 19:20',
-                            style: TextStyle(
-                              color: Colors.white60
-                            ),))
-                      ],
-                    ),
-
-                    trailing: Icon(
-                      Icons.call,
-                      color: Colors.green,
-                    ),
-
-                  ),
-                ),
-                Card(
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 25, // Adjust the radius to control the size of the circle
-                      backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                    ),
-                    title: Container(
-                        padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Nano', style: TextStyle(fontSize: 15),)),
-                    subtitle: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Icon(
-                            CupertinoIcons.arrow_down_left,
-                            color: Colors.red,
-                          ),
-                        ),
-                        Expanded(
-                            flex: 4,
-                            child: Text('September 24, 19:20',
-                              style: TextStyle(
-                                  color: Colors.white60
-                              ),))
-                      ],
-                    ),
-
-                    trailing: Icon(
-                      Icons.call,
-                      color: Colors.green,
-                    ),
-
-                  ),
-                ),
-                Card(
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 25, // Adjust the radius to control the size of the circle
-                      backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                    ),
-                    title: Container(
-                        padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Alvin Mulumba', style: TextStyle(fontSize: 15),)),
-                    subtitle: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Icon(
-                            CupertinoIcons.arrow_down_left,
-                            color: Colors.green,
-                          ),
-                        ),
-                        Expanded(
-                            flex: 4,
-                            child: Text('September 24, 19:20',
-                              style: TextStyle(
-                                  color: Colors.white60
-                              ),))
-                      ],
-                    ),
-
-                    trailing: Icon(
-                      Icons.call,
-                      color: Colors.green,
-                    ),
-
-                  ),
-                ),
-                Card(
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 25, // Adjust the radius to control the size of the circle
-                      backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                    ),
-                    title: Container(
-                        padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Alvin Mulumba', style: TextStyle(fontSize: 15),)),
-                    subtitle: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Icon(
-                            CupertinoIcons.arrow_down_left,
-                            color: Colors.green,
-                          ),
-                        ),
-                        Expanded(
-                            flex: 4,
-                            child: Text('September 24, 19:20',
-                              style: TextStyle(
-                                  color: Colors.white60
-                              ),))
-                      ],
-                    ),
-
-                    trailing: Icon(
-                      Icons.call,
-                      color: Colors.green,
-                    ),
-
-                  ),
-                ),
-                Card(
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 25, // Adjust the radius to control the size of the circle
-                      backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                    ),
-                    title: Container(
-                        padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Alvin Mulumba', style: TextStyle(fontSize: 15),)),
-                    subtitle: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Icon(
-                            CupertinoIcons.arrow_down_left,
-                            color: Colors.green,
-                          ),
-                        ),
-                        Expanded(
-                            flex: 4,
-                            child: Text('September 24, 19:20',
-                              style: TextStyle(
-                                  color: Colors.white60
-                              ),))
-                      ],
-                    ),
-
-                    trailing: Icon(
-                      Icons.call,
-                      color: Colors.green,
-                    ),
-
-                  ),
-                ),
-                Card(
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 25, // Adjust the radius to control the size of the circle
-                      backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                    ),
-                    title: Container(
-                        padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Alvin Mulumba', style: TextStyle(fontSize: 15),)),
-                    subtitle: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Icon(
-                            CupertinoIcons.arrow_down_left,
-                            color: Colors.green,
-                          ),
-                        ),
-                        Expanded(
-                            flex: 4,
-                            child: Text('September 24, 19:20',
-                              style: TextStyle(
-                                  color: Colors.white60
-                              ),))
-                      ],
-                    ),
-
-                    trailing: Icon(
-                      Icons.call,
-                      color: Colors.green,
-                    ),
-
-                  ),
-                ),
-                Card(
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 25, // Adjust the radius to control the size of the circle
-                      backgroundImage: AssetImage('assets/Bruno_passport.png',), // Provide the image URL or AssetImage
-                    ),
-                    title: Container(
-                        padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                        child: Text('Alvin Mulumba', style: TextStyle(fontSize: 15),)),
-                    subtitle: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Icon(
-                            CupertinoIcons.arrow_down_left,
-                            color: Colors.green,
-                          ),
-                        ),
-                        Expanded(
-                            flex: 4,
-                            child: Text('September 24, 19:20',
-                              style: TextStyle(
-                                  color: Colors.white60
-                              ),))
-                      ],
-                    ),
-
-                    trailing: Icon(
-                      Icons.call,
-                      color: Colors.green,
-                    ),
-
-                  ),
-                )
-
-              ],
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Text('Recent',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),textAlign: TextAlign.start,),
             ),
-          ))
+          ),
+
+
+          Expanded(
+              child: Container(
+                child: ListView.builder(
+                    itemCount: CallDataList.length,
+                    itemBuilder: (BuildContext context, int i){
+                      CallData object = CallDataList[i];
+                      return Card(
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            radius: 25, // Adjust the radius to control the size of the circle
+                            backgroundImage: AssetImage(object.Image), // Provide the image URL or AssetImage
+                          ),
+                          title: Container(
+                              padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                              child: Text(object.Name, style: TextStyle(fontSize: 15),)),
+                          subtitle: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Expanded(
+                                flex: 1,
+                                child: Icon(
+                                  CupertinoIcons.arrow_down_left,
+                                  color: object.ArrowColor,
+                                ),
+                              ),
+                              Expanded(
+                                  flex: 4,
+                                  child: Text('${object.Date},\n ${object.Time}',
+                                    style: TextStyle(
+                                        color: Colors.white60
+                                    ),))
+                            ],
+                          ),
+
+                          trailing: Icon(
+                            Icons.call,
+                            color: Colors.green,
+                          ),
+
+                        ),
+                      );
+
+
+                    } ),
+              ))
         ],
       ),
     );
   }
+}
+
+class CallData{
+  String Name;
+  String Date;
+  String Time;
+  Color ArrowColor;
+  String Image;
+
+  CallData(this.Name,this.Date,this.Time, this.ArrowColor, this.Image);
 }
