@@ -31,19 +31,7 @@ class _MyInboxWidgetState extends State<MyInboxWidget> {
   ];
 
   Iterable<MessagesData> chats = [];
-
-  List<MessageData> MessageList = [
-    MessageData('Good morning. The Earth-shattering news over the weekend '
-        'was that Taylor Swift traveled to Kansas City to cheer on her '
-        '(rumored) boyfriend, Chiefs tight end Travis Kelce. Not sure '
-        'why everyone is surprised.', 'assets/Bruno_passport.png'),
-    MessageData('Do not try this at home!', 'assets/Bruno_passport.png')
-
-  ];
-  List<MessageReplies> RepliesList = [
-    MessageReplies('Once upon a time, there lived a man from HongKong.'
-        'His name was KingKong')
-  ];
+  
 
 
   @override
@@ -210,18 +198,6 @@ class _MyInboxWidgetState extends State<MyInboxWidget> {
   }
 }
 
-class MessageData{
-  String message;
-  String image;
-  
-  MessageData(this.message, this.image);
-}
-
-class MessageReplies{
-  String text;
-
-  MessageReplies(this.text);
-}
 
 class MessagesData{
   String Message;
