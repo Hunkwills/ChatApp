@@ -3,6 +3,8 @@ import 'package:dashboard/settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'inbox.dart';
+
 // import 'inbox.dart';
 
 class Dashboard extends StatelessWidget {
@@ -59,12 +61,12 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
   // List<CustomModel> data = []; // returns a list of custom models
 
   List<ChatData> dataList = [
-    ChatData("Mourice", "Good morning bro", "08:32", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg"),
-    ChatData("Francis", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528"),
-    ChatData("Francis", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528"),
-    ChatData("Francis", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528"),
-    ChatData("Francis", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528"),
-    ChatData("Francis", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528")
+    ChatData("Maurice", "Good morning bro", "08:32", "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg", true),
+    ChatData("Hope", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528", false),
+    ChatData("Francis", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528",false),
+    ChatData("Daudi", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528",true),
+    ChatData("Peterson", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528",true),
+    ChatData("Edison", "Good afternoon sir", "15:32", "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528",false)
   ];
 
   List<StatusData> statusList = [
@@ -133,7 +135,7 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
                             backgroundImage: NetworkImage(object.ImageUrl,), // Provide the image URL or AssetImage
                           ),
                         ),
-                        Text(object.Name),
+                        Text(object.Name,style: TextStyle(fontSize: 10),),
                       ],
 
                     ),
@@ -164,7 +166,15 @@ class _MyBodyWidgetState extends State<MyBodyWidget> {
                     ChatData item = dataList[i];
                     return GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, '/inbox');},
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MyInboxWidget(object: item),
+                          ),
+                        );
+
+                      },
                         child:  Card(
                         elevation: 1,
                         shadowColor: Colors.white,
@@ -211,8 +221,9 @@ class ChatData{
   String Message;
   String time;
   String imageUrl;
+  bool isOnline=false;
 
-  ChatData(this.Name, this.Message, this.time, this.imageUrl);
+  ChatData(this.Name, this.Message, this.time, this.imageUrl, this.isOnline);
 
 }
 

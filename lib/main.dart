@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
       ),
       home:  Dashboard(),
       routes: {
-        '/inbox': (context) =>  Inbox(),
+        // '/inbox': (context) =>  MyInboxWidget(name: null),
         '/form': (context) => FormWidget(),
         '/profile': (context) => ProfileWidget(),
         '/main': (context) => Dashboard(),// Define the route to SecondPage
